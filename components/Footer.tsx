@@ -27,6 +27,9 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-500">
+          <a href="/agence-ia-montpellier" className="hover:text-blue-600 transition-colors">
+            Agence IA Montpellier
+          </a>
           <a href="https://www.augmain.fr/94fb1d8e" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">
             {t.footer.legal}
           </a>

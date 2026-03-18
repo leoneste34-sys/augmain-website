@@ -1,5 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { StickyHeader } from './components/StickyHeader';
 import { ProfileHero } from './components/ProfileHero';
 import { EfficiencyDiagnostic } from './components/EfficiencyDiagnostic';
@@ -19,6 +21,7 @@ import { COMPANY_INFO } from './constants';
 import { CookieBanner } from './components/CookieBanner';
 import { initGA, trackEvent } from './utils/analytics';
 import { LanguageProvider } from './contexts/LanguageContext';
+import { AgenceIAMontpellier } from './pages/AgenceIAMontpellier';
 
 function AppContent() {
   const [isQualificationOpen, setIsQualificationOpen] = useState(false);
@@ -42,36 +45,44 @@ function AppContent() {
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-blue-100">
       <ToastContainer />
       
-      <StickyHeader onOpenQualification={() => handleGateAccess(COMPANY_INFO.calendarUrl, 'starter')} />
-      
-      <main className="space-y-12 md:space-y-20 pb-24">
-        <ProfileHero 
-            onGateAccess={handleGateAccess} 
-            onOpenContactExchange={() => setIsContactExchangeOpen(true)}
-        />
-        <DemoSection onGateAccess={handleGateAccess} />
+      <Routes>
+        <Route path="/" element={
+          <>
+            <StickyHeader onOpenQualification={() => handleGateAccess(COMPANY_INFO.calendarUrl, 'starter')} />
+            
+            <main className="space-y-12 md:space-y-20 pb-24">
+              <ProfileHero 
+                  onGateAccess={handleGateAccess} 
+                  onOpenContactExchange={() => setIsContactExchangeOpen(true)}
+              />
+              <DemoSection onGateAccess={handleGateAccess} />
+              
+              {/* Intégration du Calculateur ROI ici pour l'impact */}
+              <ROICalculator />
+
+              {/* Intégration stratégique : Rassurer sur la compatibilité AVANT de parler prix */}
+              <TechStack />
+              
+              <Pricing onSelectPlan={(plan) => handleGateAccess(null, plan)} />
+
+              <div className="bg-white py-12 border-y border-slate-100">
+                  <EfficiencyDiagnostic />
+                  <Benefits onGateAccess={handleGateAccess} />
+              </div>
+
+              <div className="max-w-4xl mx-auto px-4">
+                  <FAQ />
+                  <ContactForm />
+              </div>
+            </main>
+
+            <Footer />
+            <FloatingCTA />
+          </>
+        } />
         
-        {/* Intégration du Calculateur ROI ici pour l'impact */}
-        <ROICalculator />
-
-        {/* Intégration stratégique : Rassurer sur la compatibilité AVANT de parler prix */}
-        <TechStack />
-        
-        <Pricing onSelectPlan={(plan) => handleGateAccess(null, plan)} />
-
-        <div className="bg-white py-12 border-y border-slate-100">
-             <EfficiencyDiagnostic />
-             <Benefits onGateAccess={handleGateAccess} />
-        </div>
-
-        <div className="max-w-4xl mx-auto px-4">
-            <FAQ />
-            <ContactForm />
-        </div>
-      </main>
-
-      <Footer />
-      <FloatingCTA onClick={() => handleGateAccess(COMPANY_INFO.calendarUrl)} />
+        <Route path="/agence-ia-montpellier" element={<AgenceIAMontpellier />} />
+      </Routes>
       
       <QualificationModal 
         isOpen={isQualificationOpen} 
@@ -91,9 +102,13 @@ function AppContent() {
 
 function App() {
   return (
-    <LanguageProvider>
-      <AppContent />
-    </LanguageProvider>
+    <HelmetProvider>
+      <BrowserRouter>
+        <LanguageProvider>
+          <AppContent />
+        </LanguageProvider>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
 

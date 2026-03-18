@@ -60,16 +60,23 @@ export const DemoSection: React.FC<DemoSectionProps> = ({ onGateAccess }) => {
                     </div>
 
                     <div className="mt-auto relative z-10">
-                        <button 
-                            onClick={() => onGateAccess(demo.link)}
-                            className={`w-full py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all group-hover:scale-[1.02] shadow-md
-                            ${isVoice 
-                                ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-blue-200' 
-                                : 'bg-slate-50 text-slate-900 border border-slate-200 hover:bg-slate-100'}`}
-                        >
-                            {isVoice ? <Phone className="w-4 h-4"/> : <ExternalLink className="w-4 h-4"/>}
-                            {demo.action}
-                        </button>
+                        {isVoice ? (
+                            <a 
+                                href={demo.link}
+                                className="w-full py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all group-hover:scale-[1.02] shadow-md bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-blue-200"
+                            >
+                                <Phone className="w-4 h-4"/>
+                                {demo.action}
+                            </a>
+                        ) : (
+                            <button 
+                                onClick={() => onGateAccess(demo.link)}
+                                className="w-full py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all group-hover:scale-[1.02] shadow-md bg-slate-50 text-slate-900 border border-slate-200 hover:bg-slate-100"
+                            >
+                                <ExternalLink className="w-4 h-4"/>
+                                {demo.action}
+                            </button>
+                        )}
                     </div>
                 </div>
             );

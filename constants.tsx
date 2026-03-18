@@ -9,7 +9,7 @@ export const COMPANY_INFO = {
   name: "Augmain",
   founder: "Mehdi ZAHAF",
   role: "Fondateur & CEO",
-  phone: "+33 6 04 98 07 26",
+  phone: "+33 9 74 99 97 30",
   email: "augmain.ia@gmail.com",
   website: "https://www.augmain.fr",
   slogan: "L'IA conversationnelle de référence pour les professionnels.",

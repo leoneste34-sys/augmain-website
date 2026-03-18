@@ -2,6 +2,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { PhoneCall, TrendingUp, DollarSign, Clock, Zap, X, CheckCircle2, Menu, Cpu, Euro, Target, Activity } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { COMPANY_INFO } from '../constants';
 
 interface StickyHeaderProps {
   onOpenQualification: () => void;
@@ -285,15 +286,15 @@ export const StickyHeader: React.FC<StickyHeaderProps> = ({ onOpenQualification 
               </button>
 
               {/* Bouton Appel - Shimmer Effect */}
-              <button 
-                onClick={onOpenQualification}
+              <a 
+                href={`tel:${COMPANY_INFO.phone}`}
                 className={`relative overflow-hidden text-sm font-bold px-4 md:px-6 py-2.5 rounded-xl transition-all shadow-lg hover:shadow-blue-500/25 flex items-center gap-2 group hover:-translate-y-0.5 active:translate-y-0 ${isActive ? 'bg-blue-600 text-white border border-blue-400' : 'bg-slate-900 text-white'}`}
               >
                 <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent z-10"></div>
                 <PhoneCall className={`w-4 h-4 relative z-20 ${!isActive && 'group-hover:animate-wiggle'}`} />
                 <span className="hidden sm:inline relative z-20">{t.header.cta}</span>
                 <span className="sm:hidden relative z-20">{t.header.call}</span>
-              </button>
+              </a>
 
               {/* Toggle Visualisation (Mobile/Desktop) */}
               {!isActive && (

@@ -6,7 +6,7 @@ export const content = {
   fr: {
     header: {
       cta: "Diagnostic Gratuit",
-      call: "Me faire rappeler",
+      call: "Appeler",
       market_invest: "CA Sécurisé",
       market_prod: "Temps Gagné",
       market_speed: "Réactivité",
@@ -360,7 +360,7 @@ export const content = {
   en: {
     header: {
       cta: "Free Diagnostic",
-      call: "Request Callback",
+      call: "Call",
       market_invest: "Revenue",
       market_prod: "Time Saved",
       market_speed: "Speed",
