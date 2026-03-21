@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { Analytics } from '@vercel/analytics/react';
 import { StickyHeader } from './components/StickyHeader';
 import { ProfileHero } from './components/ProfileHero';
 import { EfficiencyDiagnostic } from './components/EfficiencyDiagnostic';
@@ -106,6 +107,7 @@ function App() {
       <BrowserRouter>
         <LanguageProvider>
           <AppContent />
+          <Analytics />
         </LanguageProvider>
       </BrowserRouter>
     </HelmetProvider>
