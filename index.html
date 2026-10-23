@@ -1,131 +1,243 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- =======================================================================
-         SEO PRINCIPAL - Mots clés d'intention et Promesse de valeur
-    ======================================================================== -->
-    <title>Augmain | Standardiste Vocal IA & Automatisation Relation Client</title>
-    <meta name="description" content="Ne ratez plus aucun client. Augmain installe votre standardiste IA et vos agents web pour gérer appels et RDV 24/7. Solution pour PME et Indépendants." />
-    <meta name="keywords" content="Standardiste IA, Agent virtuel, Intelligence Artificielle B2B, Automatisation prise de RDV, Chatbot intelligent, Secrétariat externalisé IA, Mehdi ZAHAF" />
-    <meta name="author" content="Mehdi ZAHAF - Augmain" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://www.augmain.fr/" />
-
-    <!-- =======================================================================
-         SEO LOCAL (Montpellier, France) - Pour booster la fiche Google My Business
-    ======================================================================== -->
-    <meta name="geo.region" content="FR-OCC" />
-    <meta name="geo.placename" content="Montpellier" />
-    <meta name="geo.position" content="43.6108;3.8767" />
-    <meta name="ICBM" content="43.6108, 3.8767" />
-
-    <!-- =======================================================================
-         OPEN GRAPH / RESEAUX SOCIAUX (LinkedIn, WhatsApp, Facebook)
-    ======================================================================== -->
-    <meta property="og:type" content="business.business" />
-    <meta property="og:url" content="https://www.augmain.fr/" />
-    <meta property="og:site_name" content="Augmain" />
-    <meta property="og:title" content="Augmain - L'IA au service de votre croissance" />
-    <meta property="og:description" content="Votre entreprise perd des appels ? Découvrez le standardiste IA qui qualifie vos prospects et remplit votre agenda 24/7. Démo en direct sur le site." />
-    <!-- Image professionnelle évoquant la technologie et l'humain -->
-    <meta property="og:image" content="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1600&auto=format&fit=crop" />
-    <meta property="og:image:alt" content="Augmain Dashboard et Intelligence Artificielle" />
-    <meta property="og:locale" content="fr_FR" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:domain" content="augmain.fr" />
-    <meta name="twitter:url" content="https://www.augmain.fr/" />
-    <meta name="twitter:title" content="Augmain | Standardiste IA & Agents Web" />
-    <meta name="twitter:description" content="Automatisez votre relation client sans perdre le contact humain. Testez nos agents IA maintenant." />
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1600&auto=format&fit=crop" />
-
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
-
-    <!-- Styles & Fonts -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: #f8fafc;
-      }
-      /* Smooth scroll behavior for anchor links */
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
-
-    <!-- Import Map pour React -->
-    <script type="importmap">
-    {
-      "imports": {
-        "react": "https://esm.sh/react@^19.2.3",
-        "react/": "https://esm.sh/react@^19.2.3/",
-        "recharts": "https://esm.sh/recharts@^3.7.0",
-        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-        "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-        "@emailjs/browser": "https://esm.sh/@emailjs/browser@3.11.0"
-      }
-    }
-    </script>
-
-    <!-- =======================================================================
-         SCHEMA.ORG - Le "Passeport" pour Google My Business
-         Ceci lie le site Web à votre entité légale et géographique.
-    ======================================================================== -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Augmain",
-      "image": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1600&auto=format&fit=crop",
-      "@id": "https://www.augmain.fr",
-      "url": "https://www.augmain.fr",
-      "telephone": "+33974999730",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Montpellier",
-        "addressRegion": "Occitanie",
-        "addressCountry": "FR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 43.6108,
-        "longitude": 3.8767
-      },
-      "founder": {
-        "@type": "Person",
-        "name": "Mehdi ZAHAF"
-      },
-      "description": "Agence d'automatisation IA spécialisée. Standardiste vocal IA, Chatbots et optimisation de processus pour entreprises.",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      "sameAs": [
-        "https://www.augmain.fr"
-      ]
-    }
-    </script>
-  <link rel="stylesheet" href="/index.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Augmain — Agence web et IA à Montpellier : sites internet, Google, automatisation</title>
+  <meta name="description" content="Augmain, agence de Montpellier : site internet clé en main dès 690 €, remise en route de votre fiche Google, automatisations et assistants IA. Sans application de plus à gérer. Audit offert de 30 minutes.">
+  <link rel="canonical" href="https://www.augmain.com/">
+  <meta name="theme-color" content="#0f2340">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Augmain">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://www.augmain.com/">
+  <meta property="og:title" content="Augmain — Plus de clients qui vous trouvent sur Google">
+  <meta property="og:description" content="Sites internet, fiche Google et automatisations pour commerces, indépendants et PME. Agence de Montpellier.">
+  <meta property="og:image" content="https://www.augmain.com/img/partage.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap">
+  <link rel="stylesheet" href="/site.css">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "@id":"https://www.augmain.com/#agence",
+    "name":"Augmain",
+    "url":"https://www.augmain.com/",
+    "logo":"https://www.augmain.com/favicon.svg",
+    "image":"https://www.augmain.com/img/partage.jpg",
+    "description":"Agence web et IA à Montpellier : sites internet, visibilité sur Google, automatisations et assistants IA pour commerces, indépendants et PME.",
+    "telephone":"+33604980726",
+    "email":"augmain.ia@gmail.com",
+    "address":{"@type":"PostalAddress","addressLocality":"Montpellier","postalCode":"34000","addressCountry":"FR"},
+    "areaServed":[{"@type":"City","name":"Montpellier"},{"@type":"Country","name":"France"}],
+    "founder":{"@type":"Person","name":"Mehdi Zahaf"},
+    "priceRange":"29 € – 1 500 €",
+    "hasOfferCatalog":{"@type":"OfferCatalog","name":"Services Augmain","itemListElement":[
+      {"@type":"Offer","name":"Remise en route sur Google","price":"290","priceCurrency":"EUR"},
+      {"@type":"Offer","name":"Site internet clé en main","price":"690","priceCurrency":"EUR"},
+      {"@type":"Offer","name":"Suivi mensuel","price":"29","priceCurrency":"EUR","description":"Par mois, sans engagement"},
+      {"@type":"Offer","name":"Automatisation et assistants IA","description":"À partir de 1 500 €, sur devis après un audit offert","priceSpecification":{"@type":"PriceSpecification","minPrice":"1500","priceCurrency":"EUR"}}
+    ]}
+  }
+  </script>
 </head>
-  <body>
-    <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
+<body>
+
+<header class="haut"><div class="wrap">
+  <a class="marque" href="/" aria-label="Augmain, accueil">
+    <svg viewBox="0 0 100 100" aria-hidden="true"><g fill="#0f2340"><circle cx="50" cy="25" r="11"/><path d="M27 50c5-10 14-15 23-15s18 5 23 15c-6-3-11-3-15 1-3 3-5 5-8 5s-5-2-8-5c-4-4-9-4-15-1z"/></g><path d="M50 70c-5-7-10-10-15-10-6 0-10 4-10 10s4 10 10 10c5 0 10-3 15-10s10-10 15-10c6 0 10 4 10 10s-4 10-10 10c-5 0-10-3-15-10z" fill="none" stroke="#0f2340" stroke-width="6.5" stroke-linejoin="round"/></svg>
+    <span>AUGMAIN</span>
+  </a>
+  <nav class="menu" aria-label="Menu principal">
+    <a href="#services">Services</a>
+    <a href="#realisations">Réalisations</a>
+    <a href="#methode">Comment ça se passe</a>
+    <a href="#questions">Questions</a>
+    <a class="btn petit" href="#contact">Nous contacter</a>
+  </nav>
+</div></header>
+
+<main>
+
+<section class="ouverture" aria-labelledby="titre"><div class="wrap">
+  <div class="texte">
+    <span class="etiquette">Agence web et IA · Montpellier</span>
+    <h1 id="titre">Plus de clients qui vous trouvent sur Google.</h1>
+    <p class="sous">Augmain crée votre site, remet votre fiche Google en ordre et automatise ce qui vous fait perdre du temps. Sans application de plus à gérer : tout se branche sur ce que vous utilisez déjà.</p>
+    <div class="actions">
+      <a class="btn wa" href="https://wa.me/33604980726?text=Bonjour%20Augmain%2C%20je%20voudrais%20un%20devis%20pour%20" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.200 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.1-1.2-.2-.2-.5-.3z"/></svg>
+        Demander un devis sur WhatsApp
+      </a>
+      <a class="btn clair" href="#contact">Réserver l'audit offert</a>
+    </div>
+    <p class="note">Commerces, artisans, indépendants, PME et associations. Rendez-vous sur place à Montpellier, ou en visio partout en France.</p>
+  </div>
+  <figure class="vitrine">
+    <div class="ecran"><div class="barre"><i></i><i></i><i></i></div>
+      <img src="/img/phantom-site.jpg" width="800" height="609" alt="Page d'accueil du site du bar Phantom à Montpellier, réalisé par Augmain">
+    </div>
+    <figcaption class="legende">Site du bar Phantom, Montpellier, réalisé par Augmain. <a href="https://phantom-montpellier.fr" rel="noopener">Voir le site</a></figcaption>
+  </figure>
+</div></section>
+
+<section id="services" aria-labelledby="t-services"><div class="wrap">
+  <div class="tete">
+    <span class="etiquette">Ce que l'agence fait pour vous</span>
+    <h2 id="t-services">Quatre services, des prix clairs</h2>
+    <p class="sous">Le prix annoncé est le prix payé. 50 % à la commande, 50 % à la livraison, par virement ou par carte.</p>
+  </div>
+  <div class="services">
+    <article class="service">
+      <h3>Remise en route sur Google</h3>
+      <div class="prix"><b>290 €</b><span>une fois</span></div>
+      <p class="pour">Pour un commerce qu'on trouve mal sur Google, qui vient d'ouvrir ou d'être repris.</p>
+      <ul>
+        <li>Fiche Google complète : photos, horaires, description, liens</li>
+        <li>Corrections sur Apple Plans, PagesJaunes, TripAdvisor et les principaux annuaires</li>
+        <li>Un QR code d'avis à poser au comptoir</li>
+      </ul>
+      <span class="delai">En général, prêt en une semaine</span>
+    </article>
+    <article class="service phare">
+      <h3>Site internet clé en main</h3>
+      <div class="prix"><b>690 €</b><span>une fois</span></div>
+      <p class="pour">Un vrai site à votre image, pensé d'abord pour le téléphone.</p>
+      <ul>
+        <li>Votre carte, vos tarifs ou vos services, vos photos, vos horaires</li>
+        <li>Réservation, prise de rendez-vous ou demande de devis</li>
+        <li>Lisible par Google et par les assistants comme ChatGPT</li>
+        <li>Vous le modifiez vous-même depuis votre téléphone, et il reste à vous</li>
+      </ul>
+      <span class="delai">En général, 2 à 3 semaines</span>
+    </article>
+    <article class="service">
+      <h3>Suivi mensuel</h3>
+      <div class="prix"><b>29 €</b><span>par mois, sans engagement</span></div>
+      <p class="pour">Pour ne plus y penser, une fois le site en ligne.</p>
+      <ul>
+        <li>Vos changements faits pour vous (carte, prix, horaires, photos)</li>
+        <li>Une publication par semaine sur votre fiche Google</li>
+        <li>Un point chaque mois sur vos visites et vos contacts</li>
+      </ul>
+    </article>
+    <article class="service">
+      <h3>Automatisation et assistants IA</h3>
+      <div class="prix"><b>dès 1 500 €</b><span>sur devis</span></div>
+      <p class="pour">Pour les entreprises qui reçoivent beaucoup d'appels, de messages ou de demandes.</p>
+      <ul>
+        <li>Standard téléphonique IA qui répond et prend les rendez-vous</li>
+        <li>Réponses automatiques sur WhatsApp, tri des demandes, relances</li>
+        <li>Branché sur vos outils : agenda, caisse, tableur, CRM</li>
+      </ul>
+      <span class="delai">Après un audit offert de 30 minutes</span>
+    </article>
+  </div>
+  <p class="sous" style="margin-top:22px">Restaurant ou bar ? Découvrez aussi <a href="/standardiste-ia-restaurant">Better Call Cook, le standardiste IA d'Augmain pour les restaurants</a>.</p>
+</div></section>
+
+<section id="realisations" class="fond-creme" aria-labelledby="t-real"><div class="wrap">
+  <div class="tete">
+    <span class="etiquette">Réalisations</span>
+    <h2 id="t-real">Du travail que vous pouvez aller voir</h2>
+  </div>
+  <div class="realisations">
+    <article class="cas">
+      <img class="photo" src="/img/phantom-comptoir.webp" width="1200" height="675" alt="Le comptoir du bar Phantom, rue des Sœurs Noires à Montpellier" loading="lazy">
+      <div class="corps">
+        <h3>Phantom, bar à cocktails et tapas, Montpellier</h3>
+        <p>Le nouveau patron avait perdu l'ancien site et l'ancien nom de domaine en reprenant le bar. Augmain a tout reconstruit :</p>
+        <ul>
+          <li>Site complet, en français et en anglais : carte, réservation reliée à la caisse, privatisation, avis</li>
+          <li>Espace du patron sur téléphone : carte et prix, horaires, plan de salle, alertes à chaque réservation</li>
+          <li>Fiche Google refaite et site déclaré à Google</li>
+        </ul>
+        <a class="btn clair petit" href="https://phantom-montpellier.fr" rel="noopener" style="justify-self:start">Voir phantom-montpellier.fr</a>
+      </div>
+    </article>
+    <div class="pile">
+      <article class="cas"><div class="corps">
+        <h3>Moom Club, Montpellier</h3>
+        <p>Site d'une boîte de nuit en trois langues, avec la programmation des soirées et des DJ mise à jour depuis un simple agenda. En finition.</p>
+      </div></article>
+      <article class="cas"><div class="corps">
+        <h3>Augmain Carte</h3>
+        <p>L'outil maison de l'agence : à partir de quelques photos, il prépare en quelques minutes un aperçu du site et des QR codes d'un commerce. C'est ce qui permet de vous montrer un résultat avant même que vous décidiez.</p>
+      </div></article>
+    </div>
+  </div>
+</div></section>
+
+<section id="methode" class="fond-nuit" aria-labelledby="t-methode"><div class="wrap">
+  <div class="tete">
+    <span class="etiquette">Comment ça se passe</span>
+    <h2 id="t-methode">Simple, du premier appel à la mise en ligne</h2>
+  </div>
+  <ol class="etapes">
+    <li><h3>On en parle</h3><p>30 minutes, offertes, sur place à Montpellier ou en visio. Vous expliquez votre activité, l'agence regarde ce qui vous fait perdre des clients.</p></li>
+    <li><h3>Un devis clair</h3><p>Le prix final, écrit, sans surprise. 50 % à la commande pour lancer le travail.</p></li>
+    <li><h3>Un aperçu à valider</h3><p>Vous voyez le résultat avant la mise en ligne et vous demandez les changements.</p></li>
+    <li><h3>En ligne, et à vous</h3><p>Le solde à la livraison. Le site, les accès et les contenus vous appartiennent.</p></li>
+  </ol>
+</div></section>
+
+<section aria-labelledby="t-fondateur"><div class="wrap">
+  <div class="fondateur">
+    <div class="monogramme" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><g fill="#f4e9d8"><circle cx="50" cy="25" r="11"/><path d="M27 50c5-10 14-15 23-15s18 5 23 15c-6-3-11-3-15 1-3 3-5 5-8 5s-5-2-8-5c-4-4-9-4-15-1z"/></g><path d="M50 70c-5-7-10-10-15-10-6 0-10 4-10 10s4 10 10 10c5 0 10-3 15-10s10-10 15-10c6 0 10 4 10 10s-4 10-10 10c-5 0-10-3-15-10z" fill="none" stroke="#f4e9d8" stroke-width="6.5" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="texte">
+      <span class="etiquette">L'agence</span>
+      <h2 id="t-fondateur">La rigueur de l'aéronautique, appliquée à votre visibilité</h2>
+      <p>Augmain a été fondée à Montpellier par Mehdi Zahaf. Avant l'IA, il a passé sept ans comme mécanicien aéronautique dans l'Armée de l'Air, sur avion de chasse : ce qui est livré doit marcher, tous les jours, sans excuse.</p>
+      <p>L'agence a été lauréate du concours de pitch du programme Première Marche du BIC Montpellier en 2026. Elle utilise l'IA pour aller plus vite et vous coûter moins cher, et vérifie à la main tout ce qu'elle livre.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="questions" class="fond-creme" aria-labelledby="t-faq"><div class="wrap">
+  <div class="tete">
+    <span class="etiquette">Questions fréquentes</span>
+    <h2 id="t-faq">Ce qu'on demande souvent à l'agence</h2>
+  </div>
+  <div class="faq">
+    <details><summary>Faut-il installer une application ?</summary><p>Non. Tout se branche sur ce que vous avez déjà : votre fiche Google, votre téléphone, votre caisse ou votre WhatsApp. Vous n'avez rien de plus à surveiller.</p></details>
+    <details><summary>Je garde mon site si j'arrête le suivi ?</summary><p>Oui. Le site vous appartient. Sans le suivi, vous continuez à le modifier vous-même depuis votre téléphone.</p></details>
+    <details><summary>Vous travaillez seulement avec les restaurants ?</summary><p>Non. Commerces, artisans, professions libérales, PME, associations : l'agence travaille avec toute entreprise qui veut être mieux trouvée et gagner du temps.</p></details>
+    <details><summary>Combien de temps faut-il ?</summary><p>Une semaine en général pour la remise en route sur Google. Deux à trois semaines pour un site, selon le temps qu'il faut pour réunir vos photos et vos textes.</p></details>
+    <details><summary>Comment se passe le paiement ?</summary><p>50 % à la commande, 50 % à la livraison, par virement ou par carte bancaire. Le suivi mensuel se paie chaque mois et s'arrête quand vous voulez.</p></details>
+    <details><summary>Que fait l'IA, concrètement ?</summary><p>Elle aide l'agence à rédiger, traduire et mettre en forme plus vite, ce qui baisse vos prix. Pour l'automatisation, elle peut répondre au téléphone ou sur WhatsApp à votre place. Tout est vérifié par un humain avant d'être livré.</p></details>
+  </div>
+</div></section>
+
+<section id="contact" class="contact fond-nuit" aria-labelledby="t-contact"><div class="wrap">
+  <span class="etiquette">Contact</span>
+  <h2 id="t-contact">Parlons de votre activité</h2>
+  <p class="sous">L'audit de 30 minutes est offert, sans engagement. Écrivez sur WhatsApp, l'agence répond dans la journée.</p>
+  <div class="actions">
+    <a class="btn wa" href="https://wa.me/33604980726?text=Bonjour%20Augmain%2C%20je%20voudrais%20r%C3%A9server%20l%27audit%20offert%20de%2030%20minutes." rel="noopener">Réserver l'audit sur WhatsApp</a>
+    <a class="btn clair sur-nuit" href="mailto:augmain.ia@gmail.com?subject=Demande%20de%20devis">Écrire un e-mail</a>
+  </div>
+  <p class="coord"><span>Téléphone : <a href="tel:+33604980726">06 04 98 07 26</a></span><span>E-mail : <a href="mailto:augmain.ia@gmail.com">augmain.ia@gmail.com</a></span><span>Montpellier, Hérault</span></p>
+</div></section>
+
+</main>
+
+<footer class="bas"><div class="wrap">
+  <span>© 2026 Augmain · Montpellier</span>
+  <nav aria-label="Liens du pied de page">
+    <a href="/agence-ia-montpellier">Agence web et IA à Montpellier</a>
+    <a href="/standardiste-ia-restaurant">Standardiste IA pour restaurants</a>
+    <a href="/mentions-legales">Mentions légales</a>
+  </nav>
+</div></footer>
+
+<a class="btn wa flottant" href="https://wa.me/33604980726?text=Bonjour%20Augmain%2C%20" rel="noopener" aria-label="Écrire à Augmain sur WhatsApp">WhatsApp</a>
+
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

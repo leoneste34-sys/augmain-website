@@ -42,6 +42,7 @@ p{margin:0}
 .menu{display:flex;align-items:center;gap:22px}
 .menu a{text-decoration:none;font-weight:600;font-size:16px;color:var(--encre)}
 .menu a:hover{color:var(--or)}
+.menu a.btn,.menu a.btn:hover{color:var(--creme)}
 @media (max-width:820px){.menu a:not(.btn){display:none}}
 
 /* Boutons */
@@ -49,6 +50,8 @@ p{margin:0}
 .btn:hover{transform:translateY(-1px);background:var(--nuit-2)}
 .btn.clair{background:transparent;color:var(--nuit)}
 .btn.clair:hover{background:var(--creme)}
+.btn.clair.sur-nuit{color:var(--creme);border-color:var(--creme)}
+.btn.clair.sur-nuit:hover{background:var(--nuit-2)}
 .btn.wa{background:var(--vert);border-color:var(--vert);color:#fff}
 .btn.wa:hover{background:#177a42}
 .btn.petit{padding:10px 18px;font-size:15px}
