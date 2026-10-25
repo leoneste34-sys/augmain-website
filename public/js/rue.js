@@ -262,7 +262,8 @@
 
   function boucle(now) {
     if (!actif) return;
-    const dt = Math.min(0.05, (now - t0) / 1000); t0 = now; horloge += dt;
+    /* l'horodatage d'une image peut précéder t0 de quelques ms : jamais de temps négatif */
+    const dt = Math.max(0, Math.min(0.05, (now - t0) / 1000)); t0 = Math.max(t0, now); horloge += dt;
     sequence(horloge);
 
     if (horloge > prochain && passants.length < MAX) { nouveau(); prochain = horloge + 0.7 + Math.random() * 1.1; }
