@@ -94,11 +94,11 @@ main>section{padding-block:clamp(72px,10vw,128px);position:relative}
 
 /* ---------- Ouverture ---------- */
 main>.ouverture{padding-block:clamp(16px,3vw,40px) clamp(64px,8vw,100px);background:radial-gradient(1200px 600px at 75% 40%,#eef3ec 0%,var(--page) 70%)}
-.ouverture .cadre{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(24px,4vw,56px);align-items:center}
+.ouverture .cadre{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
 .ouverture-texte{display:grid;gap:26px;justify-items:start;position:relative;z-index:2}
 .lieu{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:16px;background:#fff;border:1px solid var(--ligne);border-radius:999px;padding:8px 16px 8px 12px}
 .lieu svg{width:16px;height:22px}
-.ouverture h1{font-weight:900;font-stretch:118%;letter-spacing:-.035em;font-size:clamp(40px,4.6vw,66px);line-height:.98}
+.ouverture h1{font-weight:900;font-stretch:112%;letter-spacing:-.035em;font-size:clamp(38px,4.1vw,60px);line-height:1}
 .ouverture h1 .ligne{display:inline-block}
 .ouverture h1 .surligne{position:relative;z-index:0}
 .ouverture h1 .surligne::after{content:"";position:absolute;left:-.06em;right:-.06em;bottom:.06em;height:.34em;background:var(--balise);z-index:-1;border-radius:4px;transform-origin:left;animation:trait 1s cubic-bezier(.6,0,.2,1) .9s both}
@@ -151,6 +151,25 @@ main>.ouverture{padding-block:clamp(16px,3vw,40px) clamp(64px,8vw,100px);backgro
   .fiche .note-etoiles,.fiche .gestes{display:none}
   .ouverture .actions .btn{width:100%}
 }
+
+/* ---------- La carte d'Augmain : ce qu'on vend, comme l'ardoise d'un restaurant ---------- */
+main>.la-carte{padding-block:clamp(40px,6vw,72px)}
+.ardoise{position:relative;max-width:980px;margin:0 auto;background:radial-gradient(120% 90% at 30% 10%,#203a5f 0%,var(--nuit) 55%,#0b1c34 100%);color:#fff;border-radius:28px;padding:clamp(28px,5vw,60px) clamp(22px,5vw,64px);border:10px solid #c9a27a;box-shadow:inset 0 0 0 2px rgba(0,0,0,.25),0 30px 60px -30px rgba(15,35,64,.6)}
+.ardoise::before{content:"";position:absolute;inset:0;border-radius:18px;pointer-events:none;opacity:.35;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:5px 5px}
+.ardoise-titre{font-weight:900;font-stretch:125%;font-size:clamp(32px,4.4vw,54px);color:var(--balise);text-align:center;letter-spacing:-.02em}
+.ardoise-sous{text-align:center;color:var(--gris-clair);margin-top:8px;font-size:18px}
+.plats{list-style:none;margin:clamp(24px,4vw,40px) 0 0;padding:0;display:grid;gap:6px}
+.plats a{display:grid;gap:4px;padding:16px 14px;border-radius:14px;text-decoration:none;color:#fff;transition:background .2s}
+.plats a:hover{background:rgba(255,255,255,.06)}
+.plat-ligne{display:flex;align-items:baseline;gap:12px}
+.plat-ligne b{font-size:clamp(19px,2.2vw,25px);font-stretch:112%;font-weight:800}
+.plat-ligne i{flex:1;border-bottom:3px dotted rgba(255,255,255,.35);transform:translateY(-6px);min-width:24px}
+.plat-prix{font-weight:900;font-stretch:120%;font-size:clamp(22px,2.6vw,30px);color:var(--balise);white-space:nowrap}
+.plat-prix small{font-size:.55em;font-weight:700;color:var(--gris-clair);margin-inline:2px}
+.plat-desc{color:var(--gris-clair);font-size:16px;max-width:60ch}
+.ardoise-pied{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:clamp(20px,3vw,32px);padding-top:22px;border-top:1px dashed rgba(255,255,255,.25)}
+.ardoise-pied p{font-weight:600;font-size:18px;max-width:46ch}
+@media (max-width:600px){.ardoise{border-width:7px}.plat-ligne{flex-wrap:wrap}.plat-ligne i{display:none}.plat-ligne b{flex:1 1 100%}.plats a{padding:14px 6px;border-bottom:1px dashed rgba(255,255,255,.15);border-radius:0}}
 
 /* ---------- Problème ---------- */
 .trois{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:clamp(36px,5vw,56px)}
