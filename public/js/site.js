@@ -32,30 +32,53 @@
     else barre.classList.add("visible");
   }
 
-  /* ---- Calculateur ---- */
-  const c = { r: $("#c-recherches"), t: $("#c-taux"), p: $("#c-panier") };
-  if (c.r) {
-    const affiche = { r: $("#o-recherches"), t: $("#o-taux"), p: $("#o-panier") };
-    let courant = 0, cible = 0, rafId = 0;
-    const remplis = el => el.style.setProperty("--p", ((el.value - el.min) / (el.max - el.min) * 100) + "%");
-    const anime = () => {
-      courant += (cible - courant) * (calme ? 1 : 0.18);
-      if (Math.abs(cible - courant) < 1) courant = cible;
-      $("#r-euros").textContent = euros(courant);
-      if (courant !== cible) rafId = requestAnimationFrame(anime);
+  /* ---- Le test : 5 questions auxquelles tout patron sait répondre en regardant sa fiche Google ---- */
+  const QUESTIONS = [
+    { q: "Quand on tape le nom de votre commerce sur Google, il apparaît avec le bon nom ?", a: "Pas de fiche, ou encore l'ancien nom ? C'est un « non ».",
+      fix: "Mettre votre fiche Google à votre nom", google: true },
+    { q: "Vos horaires sur Google sont justes, jours fériés compris ?", a: "Regardez votre fiche : un client qui trouve porte close ne revient pas.",
+      fix: "Corriger vos horaires, jours fériés compris", google: true },
+    { q: "Il y a des photos de moins d'un an sur votre fiche ?", a: "La devanture, la salle, ce que vous vendez.",
+      fix: "Ajouter de vraies photos récentes", google: true },
+    { q: "Vous avez reçu au moins un avis Google ce mois-ci ?", a: "Les clients regardent d'abord les avis les plus récents.",
+      fix: "Récolter des avis chaque semaine (QR code au comptoir)", google: true },
+    { q: "Vous avez un site ou une carte en ligne qui s'ouvre bien sur téléphone ?", a: "Une page Facebook abandonnée ne compte pas.",
+      fix: "Avoir un site clair sur téléphone : carte, horaires, réservation", site: true }
+  ];
+  const quiz = $("#quiz");
+  if (quiz) {
+    let n = 0, reps = [];
+    const montre = () => {
+      $("#quiz-etape").textContent = `Question ${n + 1} sur ${QUESTIONS.length}`;
+      $("#quiz-avance").style.width = (n / QUESTIONS.length * 100) + "%";
+      $("#quiz-question").textContent = QUESTIONS[n].q;
+      $("#quiz-aide").textContent = QUESTIONS[n].a;
+      if (!calme) $("#quiz-corps").animate([{ opacity: 0, transform: "translateX(24px)" }, { opacity: 1, transform: "none" }], { duration: 300, easing: "ease-out" });
     };
-    const calcule = () => {
-      Object.values(c).forEach(remplis);
-      const clients = (+c.r.value) * 30 * (+c.t.value) / 100, mois = clients * (+c.p.value);
-      affiche.r.textContent = c.r.value; affiche.t.textContent = c.t.value; affiche.p.textContent = c.p.value + " €";
-      $("#r-clients").textContent = euros(clients);
-      $("#r-an").textContent = euros(mois * 12) + " €";
-      $("#r-jauge").style.width = Math.min(100, 8 + mois / 60) + "%";
-      $("#r-cta").href = WA + encodeURIComponent(`Bonjour Augmain, d'après votre calculateur je rate environ ${euros(mois)} € par mois. Je voudrais l'audit offert. Mon commerce : `);
-      cible = mois; cancelAnimationFrame(rafId); anime();
+    const fin = () => {
+      $("#quiz-avance").style.width = "100%";
+      $("#quiz-etape").textContent = "Votre résultat";
+      $("#quiz-corps").hidden = true; $("#quiz-fin").hidden = false;
+      const note = reps.filter(r => r === "oui").length, rates = QUESTIONS.filter((_, i) => reps[i] !== "oui");
+      $("#quiz-note").textContent = note;
+      $("#quiz-verdict").textContent = note === 5 ? "Bravo : votre commerce est bien présenté. On peut vous aider à le garder à jour."
+        : note >= 3 ? "Pas mal, mais des clients vous ratent encore. Voici quoi corriger :"
+        : "Aujourd'hui, beaucoup de clients ne vous trouvent pas, ou passent au voisin. Voici quoi corriger :";
+      $("#quiz-a-faire").innerHTML = rates.map(x => `<li>${x.fix}</li>`).join("");
+      const g = rates.some(x => x.google), s = rates.some(x => x.site);
+      const offre = g && s ? ["Fiche Google à jour + site internet", "290 € + 690 €", "Une seule fois. Ou le pack tout compris, dès 1 500 €."]
+        : g ? ["Votre fiche Google à jour", "290 €", "Une seule fois. Prête en une semaine."]
+        : s ? ["Votre site internet", "690 €", "Une seule fois. En ligne en 2 à 3 semaines."]
+        : ["Le suivi mensuel", "29 €/mois", "On garde tout à jour pour vous, sans engagement."];
+      $("#quiz-offre").innerHTML = `<span>Pour vous</span><b>${offre[0]}</b><strong>${offre[1]}</strong><em>${offre[2]}</em>`;
+      const resume = QUESTIONS.map((x, i) => `${i + 1}. ${reps[i] === "oui" ? "oui" : reps[i] === "non" ? "non" : "je ne sais pas"}`).join(", ");
+      $("#quiz-cta").href = WA + encodeURIComponent(`Bonjour Augmain, j'ai fait le test : ${note}/5 (${resume}). Je voudrais mon plan gratuit. Mon commerce : `);
+      if (!calme) $("#quiz-fin").animate([{ opacity: 0, transform: "scale(.96)" }, { opacity: 1, transform: "none" }], { duration: 420, easing: "cubic-bezier(.3,1.3,.5,1)" });
+      try { window.va && window.va("event", { name: "test", data: { note } }); } catch (e) {}
     };
-    Object.values(c).forEach(el => el.addEventListener("input", calcule));
-    calcule();
+    $$(".quiz-choix button").forEach(b => b.addEventListener("click", () => { reps[n] = b.dataset.rep; n++; n < QUESTIONS.length ? montre() : fin(); }));
+    $("#quiz-refaire").addEventListener("click", () => { n = 0; reps = []; $("#quiz-fin").hidden = true; $("#quiz-corps").hidden = false; montre(); });
+    montre();
   }
 
   /* ---- Avant / après ---- */
@@ -121,8 +144,8 @@
     gsap.from(".carte-pb", { y: 60, rotate: i => [-4, 0, 4][i % 3], opacity: 0, duration: 0.8, stagger: 0.12, ease: "back.out(1.4)", scrollTrigger: { trigger: ".trois", start: "top 80%" } });
     $$(".barre-nom").forEach(b => { b.style.setProperty("--barre", 0); ScrollTrigger.create({ trigger: b, start: "top 80%", onEnter: () => b.style.setProperty("--barre", 1) }); });
 
-    /* calculateur : le résultat se pose */
-    gsap.from(".resultat", { y: 50, opacity: 0, rotate: 2, duration: 0.9, ease: "power3.out", scrollTrigger: { trigger: ".calcul", start: "top 70%" } });
+    /* le test : la carte de questions se pose */
+    gsap.from(".quiz", { y: 50, opacity: 0, rotate: 2, duration: 0.9, ease: "power3.out", scrollTrigger: { trigger: ".test", start: "top 70%" } });
 
     /* offres : les prix tombent comme un tampon */
     gsap.from(".offre", { y: 70, opacity: 0, duration: 0.8, stagger: 0.1, ease: "power3.out", scrollTrigger: { trigger: ".offres", start: "top 80%" } });

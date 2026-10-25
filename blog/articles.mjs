@@ -92,7 +92,7 @@ const ENTETE = `<header class="haut" id="haut">
     <nav class="menu" id="menu" aria-label="Menu principal">
       <a class="lien-menu" href="/#services">Services et prix</a>
       <a class="lien-menu" href="/#realisations">Réalisations</a>
-      <a class="lien-menu" href="/#calcul">Calculateur</a>
+      <a class="lien-menu" href="/#test">Le test</a>
       <a class="lien-menu" href="/blog">Conseils</a>
       <a class="lien-menu" href="/#contact">Contact</a>
     </nav>

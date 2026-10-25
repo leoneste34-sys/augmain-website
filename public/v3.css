@@ -210,6 +210,34 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .compare{font-size:16px;color:var(--gris-clair)}
 .compare b{color:#fff}
 
+/* ---------- Le test ---------- */
+.test-promesse{margin-top:26px}
+.quiz{background:var(--nuit);color:#fff;border-radius:28px;padding:clamp(24px,4vw,40px);display:grid;gap:22px;box-shadow:var(--ombre);min-height:430px;align-content:start;position:relative;overflow:hidden}
+.quiz::before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(255,200,61,.3),transparent 70%);pointer-events:none}
+.quiz-haut{display:grid;gap:10px;font-weight:700;color:var(--gris-clair);font-size:15px}
+.quiz-barre{height:8px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden}
+.quiz-barre span{display:block;height:100%;width:0;background:var(--balise);border-radius:999px;transition:width .35s ease}
+.quiz-corps{display:grid;gap:14px}
+.quiz-question{font-weight:850;font-stretch:112%;font-size:clamp(24px,2.6vw,32px);line-height:1.15}
+.quiz-aide{color:var(--gris-clair);font-size:17px}
+.quiz-choix{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.quiz-choix .btn{flex:1 1 120px}
+.quiz .btn.fantome{border-color:rgba(255,255,255,.5);color:#fff}
+.quiz .btn.nuit-btn{background:var(--nuit-2)}
+.quiz-fin{display:grid;gap:12px;justify-items:start}
+.quiz-fin[hidden],.quiz-corps[hidden]{display:none}
+.quiz .petit-titre{font-weight:700;color:var(--gris-clair)}
+.quiz .gros-chiffre{font-weight:900;font-stretch:125%;font-size:clamp(64px,8vw,96px);line-height:.9;color:var(--balise)}
+.quiz .gros-chiffre small{font-size:.4em;color:var(--gris-clair);margin-left:4px}
+.quiz-verdict{font-size:18px;font-weight:600}
+.quiz-a-faire{margin:0;padding-left:22px;display:grid;gap:6px;color:var(--gris-clair)}
+.quiz-offre{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:16px 18px;display:grid;gap:2px}
+.quiz-offre span{font-size:14px;font-weight:700;color:var(--balise)}
+.quiz-offre b{font-size:20px;font-stretch:112%}
+.quiz-offre strong{font-size:26px;font-weight:900;color:var(--balise);font-stretch:118%}
+.quiz-offre em{font-style:normal;color:var(--gris-clair);font-size:15px}
+.quiz-refaire{background:none;border:0;color:var(--gris-clair);text-decoration:underline;font:600 15px var(--police);cursor:pointer;padding:4px 0}
+
 /* ---------- Services ---------- */
 .offres{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:clamp(36px,5vw,56px);perspective:1200px}
 .offre{background:#fff;border:1px solid var(--ligne);border-radius:22px;padding:26px 22px;display:grid;gap:14px;align-content:start;position:relative;transform-style:preserve-3d;transition:box-shadow .25s;box-shadow:0 2px 0 var(--ligne)}

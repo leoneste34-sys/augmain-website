@@ -40,7 +40,7 @@
       {"@type":"Offer","name":"Remise en route sur Google","price":"290","priceCurrency":"EUR"},
       {"@type":"Offer","name":"Site internet clé en main","price":"690","priceCurrency":"EUR"},
       {"@type":"Offer","name":"Suivi mensuel","price":"29","priceCurrency":"EUR","description":"Par mois, sans engagement"},
-      {"@type":"Offer","name":"Automatisation et assistants IA","description":"À partir de 1 500 €, sur devis après un audit offert","priceSpecification":{"@type":"PriceSpecification","minPrice":"1500","priceCurrency":"EUR"}}
+      {"@type":"Offer","name":"Pack tout compris","description":"Site, fiche Google, réservations en ligne, réponses automatiques, demandes d'avis. À partir de 1 500 €, sur devis après un audit offert","priceSpecification":{"@type":"PriceSpecification","minPrice":"1500","priceCurrency":"EUR"}}
     ]}
   }
   </script>
@@ -70,12 +70,12 @@
           <a href="#services" data-service="google"><b>Fiche Google</b><span>Remise en route · 290 €</span></a>
           <a href="#services" data-service="site"><b>Site internet</b><span>Clé en main · 690 €</span></a>
           <a href="#services" data-service="suivi"><b>Suivi mensuel</b><span>Sans engagement · 29 €/mois</span></a>
-          <a href="#services" data-service="ia"><b>Assistant téléphone</b><span>Il répond quand vous êtes occupé</span></a>
+          <a href="#services" data-service="ia"><b>Pack tout compris</b><span>Site, Google, réservations, réponses auto · dès 1 500 €</span></a>
           <a href="/standardiste-ia-restaurant"><b>Standardiste IA</b><span>Pour les restaurants</span></a>
         </div>
       </div>
       <a class="lien-menu" href="#realisations">Réalisations</a>
-      <a class="lien-menu" href="#calcul">Calculateur</a>
+      <a class="lien-menu" href="#test">Le test</a>
       <a class="lien-menu" href="/blog">Conseils</a>
       <a class="lien-menu" href="#contact">Contact</a>
     </nav>
@@ -101,10 +101,10 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.1-1.2-.2-.2-.5-.3z"/></svg>
           Réserver mon audit offert
         </a>
-        <a class="btn fantome grand" href="#calcul" data-cta="hero-calcul">Calculer ce que je rate</a>
+        <a class="btn fantome grand" href="#test" data-cta="hero-test">Faire le test (30 s)</a>
       </div>
       <ul class="preuves">
-        <li><b>7 jours</b> pour une fiche Google à votre nom</li>
+        <li><b>Une semaine</b> pour une fiche Google à votre nom</li>
         <li><b>Prix écrits</b> avant de commencer</li>
         <li><b>On se déplace</b> dans votre commerce</li>
       </ul>
@@ -152,8 +152,8 @@
         </li>
         <li>
           <a href="#offre-ia" data-cta="carte-ia">
-            <span class="plat-ligne"><b>Un assistant qui répond au téléphone</b><i aria-hidden="true"></i><span class="plat-prix"><small>dès</small> 1 500 €</span></span>
-            <span class="plat-desc">Quand vous êtes occupé, il décroche, répond aux questions et note les rendez-vous. C'est ça, l'intelligence artificielle.</span>
+            <span class="plat-ligne"><b>Le pack tout compris</b><i aria-hidden="true"></i><span class="plat-prix"><small>dès</small> 1 500 €</span></span>
+            <span class="plat-desc">Site, fiche Google, réservations en ligne, réponses automatiques sur WhatsApp et Instagram, avis qui arrivent tout seuls. Votre commerce tourne même quand vous êtes en cuisine.</span>
           </a>
         </li>
       </ul>
@@ -199,37 +199,38 @@
   </div>
 </section>
 
-<!-- 3. Calculateur -->
-<section class="calcul" id="calcul" aria-labelledby="t-calcul">
+<!-- 3. Le test -->
+<section class="test" id="test" aria-labelledby="t-test">
   <div class="cadre deux">
     <div>
-      <h2 id="t-calcul" class="grand-titre">Combien de clients vous ratent chaque mois&nbsp;?</h2>
-      <p class="chapo">Bougez les curseurs. Le calcul est une estimation : on la vérifie ensemble, avec vos vrais chiffres, pendant l'audit.</p>
-      <div class="curseurs">
-        <label class="curseur-ligne">
-          <span>Personnes qui cherchent un commerce comme le vôtre, autour de vous, chaque jour</span>
-          <output for="c-recherches" id="o-recherches">40</output>
-          <input type="range" id="c-recherches" min="5" max="300" step="5" value="40">
-        </label>
-        <label class="curseur-ligne">
-          <span>Sur 100 de ces personnes, combien pourraient venir chez vous</span>
-          <output for="c-taux" id="o-taux">3</output>
-          <input type="range" id="c-taux" min="1" max="15" step="1" value="3">
-        </label>
-        <label class="curseur-ligne">
-          <span>Ce que dépense un client chez vous, en moyenne</span>
-          <output for="c-panier" id="o-panier">18 €</output>
-          <input type="range" id="c-panier" min="5" max="150" step="1" value="18">
-        </label>
-      </div>
+      <h2 id="t-test" class="grand-titre">Votre commerce est-il facile à trouver&nbsp;?</h2>
+      <p class="chapo">5 questions, 30 secondes. Vous connaissez toutes les réponses : il suffit de regarder votre fiche sur Google.</p>
+      <ul class="coches test-promesse">
+        <li>Votre note sur 5</li>
+        <li>Ce qu'il faut corriger, dans l'ordre</li>
+        <li>Le service qui vous correspond, avec son prix</li>
+      </ul>
     </div>
-    <div class="resultat" aria-live="polite">
-      <p class="petit-titre">Chaque mois, à récupérer</p>
-      <p class="gros-chiffre"><span id="r-euros">648</span> €</p>
-      <p class="sous-chiffre"><b id="r-clients">36</b> clients de plus, soit <b id="r-an">7 776 €</b> sur un an.</p>
-      <div class="jauge" aria-hidden="true"><span id="r-jauge"></span></div>
-      <p class="compare">La remise en route sur Google coûte <b>290 €</b>, une seule fois.</p>
-      <a class="btn vert" id="r-cta" href="https://wa.me/33604980726" rel="noopener" data-cta="calcul">Récupérer ces clients</a>
+    <div class="quiz" id="quiz" aria-live="polite">
+      <div class="quiz-haut"><span id="quiz-etape">Question 1 sur 5</span><span class="quiz-barre"><span id="quiz-avance"></span></span></div>
+      <div class="quiz-corps" id="quiz-corps">
+        <p class="quiz-question" id="quiz-question"></p>
+        <p class="quiz-aide" id="quiz-aide"></p>
+        <div class="quiz-choix">
+          <button type="button" class="btn vert" data-rep="oui">Oui</button>
+          <button type="button" class="btn nuit-btn" data-rep="non">Non</button>
+          <button type="button" class="btn fantome" data-rep="nsp">Je ne sais pas</button>
+        </div>
+      </div>
+      <div class="quiz-fin" id="quiz-fin" hidden>
+        <p class="petit-titre">Votre note</p>
+        <p class="gros-chiffre"><span id="quiz-note">0</span><small>/5</small></p>
+        <p class="quiz-verdict" id="quiz-verdict"></p>
+        <ol class="quiz-a-faire" id="quiz-a-faire"></ol>
+        <div class="quiz-offre" id="quiz-offre"></div>
+        <a class="btn vert grand" id="quiz-cta" href="https://wa.me/33604980726" rel="noopener" data-cta="test">Recevoir mon plan gratuit</a>
+        <button type="button" class="quiz-refaire" id="quiz-refaire">Refaire le test</button>
+      </div>
     </div>
   </div>
 </section>
@@ -275,15 +276,17 @@
         <a class="btn nuit-btn" href="https://wa.me/33604980726?text=Bonjour%20Augmain%2C%20le%20suivi%20mensuel%20%C3%A0%2029%20%E2%82%AC%20m%27int%C3%A9resse.%20Mon%20commerce%20%3A%20" rel="noopener" data-cta="offre-suivi">Prendre le suivi</a>
       </article>
       <article class="offre" id="offre-ia">
-        <h3>Assistant qui répond au téléphone</h3>
-        <p class="prix"><b>dès 1 500 €</b> sur devis</p>
+        <h3>Le pack tout compris</h3>
+        <p class="prix"><b>dès 1 500 €</b> selon votre commerce</p>
         <ul>
-          <li>Standard téléphonique qui prend les rendez-vous</li>
-          <li>Réponses WhatsApp et relances automatiques</li>
-          <li>Branché sur votre agenda et vos outils</li>
+          <li>Le site et la fiche Google, déjà compris</li>
+          <li>Réservations ou rendez-vous en ligne, dans votre agenda</li>
+          <li>Réponses automatiques sur WhatsApp et Instagram : horaires, carte, réservation</li>
+          <li>Demande d'avis envoyée toute seule après la visite</li>
+          <li>En option : un assistant qui répond au téléphone (payé à la minute)</li>
         </ul>
-        <p class="delai">Après un audit offert de 30 min</p>
-        <a class="btn nuit-btn" href="https://wa.me/33604980726?text=Bonjour%20Augmain%2C%20je%20voudrais%20l%27audit%20IA%20offert%20de%2030%20minutes.%20Mon%20entreprise%20%3A%20" rel="noopener" data-cta="offre-ia">Réserver l'audit IA</a>
+        <p class="delai">Devis écrit après un audit offert de 30 min</p>
+        <a class="btn nuit-btn" href="https://wa.me/33604980726?text=Bonjour%20Augmain%2C%20le%20pack%20tout%20compris%20m%27int%C3%A9resse.%20Mon%20commerce%20%3A%20" rel="noopener" data-cta="offre-ia">Parler du pack</a>
       </article>
     </div>
   </div>
@@ -403,7 +406,7 @@
     </div>
     <div class="faq">
       <details><summary>Faut-il installer une application&nbsp;?</summary><p>Non. Tout se branche sur ce que vous avez déjà : votre fiche Google, votre téléphone, votre WhatsApp.</p></details>
-      <details><summary>Combien de temps faut-il&nbsp;?</summary><p>Une semaine pour la fiche Google. Deux à trois semaines pour un site.</p></details>
+      <details><summary>Combien de temps faut-il&nbsp;?</summary><p>Une semaine en général pour la fiche Google (si Google demande une vérification par courrier, un peu plus). Deux à trois semaines pour un site.</p></details>
       <details><summary>Le site m'appartient&nbsp;?</summary><p>Oui. Le site, les accès et les contenus sont à vous, avec ou sans suivi.</p></details>
       <details><summary>Vous travaillez seulement avec les restaurants&nbsp;?</summary><p>Non : bars, coiffeurs, boutiques, artisans, professions libérales, PME. Tout commerce qui veut être trouvé.</p></details>
       <details><summary>Comment se passe le paiement&nbsp;?</summary><p>La moitié à la commande, l'autre moitié à la livraison, par virement ou par carte.</p></details>
@@ -445,7 +448,7 @@
           <option>Remise en route sur Google (290 €)</option>
           <option>Site internet (690 €)</option>
           <option>Suivi mensuel (29 €/mois)</option>
-          <option>Assistant IA sur mesure</option>
+          <option>Le pack tout compris (dès 1 500 €)</option>
         </select>
       </label>
       <button class="btn vert grand" type="submit" data-cta="formulaire">Envoyer sur WhatsApp</button>
