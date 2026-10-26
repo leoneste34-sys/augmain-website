@@ -131,7 +131,7 @@
 
     /* ouverture : le titre ligne par ligne, puis la rue s'éloigne en douceur au défilement */
     gsap.from(".ouverture h1 .ligne", { yPercent: 60, opacity: 0, duration: 0.8, stagger: 0.12, ease: "power3.out" });
-    gsap.from([".ouverture .lieu", ".ouverture .chapo", ".ouverture .actions", ".ouverture .preuves"], { y: 20, opacity: 0, duration: 0.7, stagger: 0.08, delay: 0.35, ease: "power2.out" });
+    gsap.from([".ouverture .lieu", ".ouverture .chapo", ".ouverture .portes", ".ouverture .lien-fleche", ".ouverture .preuves"], { y: 20, opacity: 0, duration: 0.7, stagger: 0.08, delay: 0.35, ease: "power2.out" });
     gsap.from("#rue", { scale: 0.9, opacity: 0, duration: 1.1, ease: "power3.out", delay: 0.15 });
     gsap.to("#rue .scene", { scale: 1.12, yPercent: -6, ease: "none", scrollTrigger: { trigger: ".ouverture", start: "top top", end: "bottom top", scrub: true } });
 
@@ -139,6 +139,9 @@
     gsap.from(".ardoise", { y: 60, rotate: -1.5, opacity: 0, duration: 0.9, ease: "power3.out", scrollTrigger: { trigger: ".la-carte", start: "top 80%" } });
     gsap.from(".plats li", { x: -30, opacity: 0, duration: 0.55, stagger: 0.14, delay: 0.25, ease: "power2.out", scrollTrigger: { trigger: ".la-carte", start: "top 80%" } });
     gsap.from(".plat-ligne i", { scaleX: 0, transformOrigin: "left", duration: 0.6, stagger: 0.14, delay: 0.45, ease: "power2.out", scrollTrigger: { trigger: ".la-carte", start: "top 80%" } });
+
+    /* automatisations : les cartes avant / après arrivent une à une */
+    gsap.from(".tache", { y: 40, opacity: 0, duration: 0.6, stagger: 0.08, ease: "power2.out", scrollTrigger: { trigger: ".taches", start: "top 82%" } });
 
     /* problème : les cartes arrivent en éventail, le nom barré se raye */
     gsap.from(".carte-pb", { y: 60, rotate: i => [-4, 0, 4][i % 3], opacity: 0, duration: 0.8, stagger: 0.12, ease: "back.out(1.4)", scrollTrigger: { trigger: ".trois", start: "top 80%" } });

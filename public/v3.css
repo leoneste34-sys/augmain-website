@@ -418,3 +418,28 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .telephone img{width:100%;height:auto;display:block;animation:defile 22s ease-in-out 1s infinite alternate}
 @keyframes defile{0%,8%{transform:translateY(0)}92%,100%{transform:translateY(calc(-100% + 100cqh))}}
 @media (prefers-reduced-motion:reduce){.telephone img{animation:none}}
+
+/* ---------- Deux portes dans l'ouverture : commerce / entreprise ---------- */
+.portes{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;max-width:560px}
+.porte{position:relative;display:grid;gap:4px;text-decoration:none;background:#fff;border:2px solid var(--nuit);border-radius:18px;padding:16px 44px 16px 18px;transition:transform .18s cubic-bezier(.3,1.4,.5,1),background .18s,box-shadow .18s}
+.porte:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(15,35,64,.6)}
+.porte:first-child{background:var(--nuit);color:#fff}
+.porte-qui{font-size:14px;font-weight:600;opacity:.75}
+.porte b{font-size:18px;font-stretch:110%;line-height:1.2}
+.porte-fleche{position:absolute;right:14px;top:50%;translate:0 -50%;width:30px;height:30px;border-radius:50%;background:var(--balise);color:var(--nuit);display:grid;place-items:center;font-weight:900}
+@media (max-width:600px){.portes{grid-template-columns:1fr}}
+@media (max-width:900px){.ouverture .portes{order:5}.ouverture .lien-fleche{order:5}}
+
+/* ---------- Automatisations : avant / après ---------- */
+.taches{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(32px,5vw,48px)}
+.tache{background:#fff;border:1px solid var(--ligne);border-radius:var(--r);padding:22px;display:grid;gap:12px;align-content:start}
+.tache h3{font-size:21px;font-stretch:112%}
+.tache p{font-size:16px;display:grid;gap:4px;padding:12px 14px;border-radius:12px}
+.tache p span{font-size:13px;font-weight:800;text-transform:none}
+.tache .avant{background:#f6f0f0;color:#6b4a4a}
+.tache .avant span{color:#c62828}
+.tache .apres{background:#eaf5ee;color:#1d4a30}
+.tache .apres span{color:var(--vert)}
+.relance.clair{background:#fff;border:1px solid var(--ligne)}
+@media (max-width:1000px){.taches{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.taches{grid-template-columns:1fr}}
