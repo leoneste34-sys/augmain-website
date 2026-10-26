@@ -61,7 +61,7 @@ main>section{padding-block:clamp(72px,10vw,128px);position:relative}
 .marque{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:850;font-stretch:125%;font-size:22px;letter-spacing:-.01em}
 .marque svg{width:40px;height:40px}
 .menu{display:flex;align-items:center;gap:6px;margin-left:auto}
-.lien-menu{font:600 16px var(--police);color:var(--nuit);text-decoration:none;padding:10px 14px;border-radius:10px;background:none;border:0;cursor:pointer}
+.lien-menu{white-space:nowrap;font:600 16px var(--police);color:var(--nuit);text-decoration:none;padding:10px 14px;border-radius:10px;background:none;border:0;cursor:pointer}
 .lien-menu:hover{background:var(--plan)}
 .deroulant{position:relative}
 .deroulant>.lien-menu::after{content:"";display:inline-block;width:7px;height:7px;border:solid currentColor;border-width:0 2px 2px 0;transform:translateY(-3px) rotate(45deg);margin-left:8px;transition:transform .2s}
@@ -79,7 +79,7 @@ main>section{padding-block:clamp(72px,10vw,128px);position:relative}
 .burger span:first-child{top:16px}.burger span:last-child{top:25px}
 .burger[aria-expanded="true"] span:first-child{top:20px;transform:rotate(45deg)}
 .burger[aria-expanded="true"] span:last-child{top:20px;transform:rotate(-45deg)}
-@media (max-width:1060px){.appeler span{display:none}.appeler{padding-inline:12px}}
+@media (max-width:1240px){.appeler span{display:none}.appeler{padding-inline:12px}}
 @media (max-width:900px){
   .burger{display:block}
   .menu{position:fixed;inset:72px 0 auto 0;margin:0;flex-direction:column;align-items:stretch;gap:2px;background:var(--page);padding:12px 16px 24px;box-shadow:0 30px 40px -30px rgba(15,35,64,.5);transform:translateY(-12px);opacity:0;visibility:hidden;transition:.25s;max-height:calc(100dvh - 72px);overflow:auto}
@@ -443,3 +443,15 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .relance.clair{background:#fff;border:1px solid var(--ligne)}
 @media (max-width:1000px){.taches{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){.taches{grid-template-columns:1fr}}
+
+/* ---------- Avant / après : cartes alignées, vraies photos, glisser au doigt ---------- */
+.comparateur{cursor:ew-resize;touch-action:pan-y}
+.aa{place-items:start center;padding:56px 18px 24px}
+.gfiche{height:430px;align-content:start}
+.gfiche-photo{display:block;width:100%;height:150px;object-fit:cover}
+.gfiche-photo.vieille{display:grid;place-items:center;color:#9a9a9a;font-weight:700;font-size:14px}
+.g-photos img,.g-photos i{width:31%;height:56px;border-radius:8px;object-fit:cover;display:block}
+.g-photos.vides i{background:#e4e4e4}
+.aa-curseur{pointer-events:none}
+.aa-poignee::after{width:58px;height:58px}
+@media (max-width:600px){.gfiche{height:400px}.aa{padding-top:52px}}

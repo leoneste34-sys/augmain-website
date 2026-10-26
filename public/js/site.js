@@ -88,6 +88,13 @@
     const place = v => { avant.style.clipPath = `inset(0 ${100 - v}% 0 0)`; poignee.style.left = v + "%"; };
     aa.addEventListener("input", () => place(aa.value));
     place(aa.value);
+    /* glisser au doigt ou à la souris n'importe où sur l'image (le curseur caché sert au clavier) */
+    const zone = $("#comparateur");
+    let glisse = false;
+    const suit = e => { const r = zone.getBoundingClientRect(), v = Math.max(0, Math.min(100, (e.clientX - r.left) / r.width * 100)); aa.value = v; place(v); };
+    zone.addEventListener("pointerdown", e => { glisse = true; zone.setPointerCapture(e.pointerId); suit(e); });
+    zone.addEventListener("pointermove", e => { if (glisse) suit(e); });
+    ["pointerup", "pointercancel", "lostpointercapture"].forEach(t => zone.addEventListener(t, () => { glisse = false; }));
     /* petit balancement la première fois qu'on la voit, pour montrer qu'on peut la faire glisser */
     if (!calme) new IntersectionObserver((e, o) => {
       if (!e[0].isIntersecting) return; o.disconnect();

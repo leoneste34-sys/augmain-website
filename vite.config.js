@@ -13,6 +13,7 @@ export default defineConfig({
         restaurants: page('standardiste-ia-restaurant.html'),
         mentions: page('mentions-legales.html'),
         carte: page('augmain-carte.html'),
+        qui: page('qui-sommes-nous.html'),
       },
     },
   },
