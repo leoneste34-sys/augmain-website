@@ -393,3 +393,28 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .encart-cta{margin:44px 0;background:var(--nuit);color:#fff;border-radius:24px;padding:28px;display:grid;gap:14px;justify-items:start}
 .encart-cta p{font-size:20px!important;font-weight:700}
 .liste-blog{display:grid;gap:16px;margin-top:32px}
+
+/* ---------- Ligne gratuite de l'ardoise (Augmain Carte) ---------- */
+.plats .plat-gratuit a{background:rgba(255,200,61,.1);border:2px dashed rgba(255,200,61,.55)}
+.plats .plat-gratuit a:hover{background:rgba(255,200,61,.16)}
+
+/* ---------- Page produit Augmain Carte ---------- */
+.produit-ouverture{padding-block:clamp(24px,5vw,64px) clamp(56px,8vw,96px)}
+.produit-ouverture .cadre{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
+.produit-ouverture h1{font-weight:900;font-stretch:115%;letter-spacing:-.035em;font-size:clamp(38px,4.6vw,62px);line-height:1}
+.produit-ouverture h1 span{background:linear-gradient(transparent 62%,var(--balise) 62%)}
+.produit-ouverture .actions{margin-top:26px}
+.telephone{width:min(320px,80%);aspect-ratio:9/18;margin-inline:auto;border:12px solid var(--nuit);border-radius:42px;overflow:hidden;background:#000;box-shadow:var(--ombre);position:relative}
+.telephone iframe{width:100%;height:100%;border:0;background:#fff}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:clamp(32px,5vw,48px)}
+.trio article{background:#fff;border:1px solid var(--ligne);border-radius:var(--r);padding:24px;display:grid;gap:10px;align-content:start}
+.trio .num{width:46px;height:46px;border-radius:50%;background:var(--balise);display:grid;place-items:center;font-weight:900;font-size:20px}
+.trio h3{font-size:21px;font-stretch:112%}
+.trio p{color:var(--gris)}
+.nuit .trio article{background:var(--nuit-2);border-color:rgba(255,255,255,.08)}
+.nuit .trio h3{color:#fff}.nuit .trio p{color:var(--gris-clair)}
+@media (max-width:900px){.produit-ouverture .cadre,.trio{grid-template-columns:1fr}}
+.telephone{container-type:size}
+.telephone img{width:100%;height:auto;display:block;animation:defile 22s ease-in-out 1s infinite alternate}
+@keyframes defile{0%,8%{transform:translateY(0)}92%,100%{transform:translateY(calc(-100% + 100cqh))}}
+@media (prefers-reduced-motion:reduce){.telephone img{animation:none}}

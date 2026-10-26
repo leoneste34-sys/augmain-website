@@ -12,6 +12,7 @@ export default defineConfig({
         montpellier: page('agence-ia-montpellier.html'),
         restaurants: page('standardiste-ia-restaurant.html'),
         mentions: page('mentions-legales.html'),
+        carte: page('augmain-carte.html'),
       },
     },
   },

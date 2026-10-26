@@ -2,7 +2,30 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/index", "destination": "/", "permanent": true },
-    { "source": "/better-call-cook", "destination": "/standardiste-ia-restaurant", "permanent": true }
+    {
+      "source": "/index",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/better-call-cook",
+      "destination": "/standardiste-ia-restaurant",
+      "permanent": true
+    },
+    {
+      "source": "/creer",
+      "destination": "https://augmain.vercel.app/creer?src=site",
+      "permanent": false
+    },
+    {
+      "source": "/rejoindre",
+      "destination": "https://augmain.vercel.app/rejoindre?src=site",
+      "permanent": false
+    },
+    {
+      "source": "/demo",
+      "destination": "https://augmain.vercel.app/demo.html?v=pro",
+      "permanent": false
+    }
   ]
 }
