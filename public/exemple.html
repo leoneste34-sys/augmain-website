@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Exemple de site Augmain Carte — Augmain</title>
+<meta name="description" content="Un exemple de site fait avec Augmain Carte : la carte, les horaires, les boutons Appeler et Itinéraire, pensé pour le téléphone.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+  html,body{margin:0;height:100%;background:#0f2340;font-family:system-ui,sans-serif}
+  .bandeau{position:fixed;inset:0 0 auto 0;z-index:2;display:flex;gap:10px;align-items:center;justify-content:space-between;padding:10px 16px;background:#0f2340;color:#fff;font-size:14px}
+  .bandeau a{color:#fff}
+  .bandeau .cta{background:#ffc83d;color:#0f2340;font-weight:700;text-decoration:none;padding:9px 14px;border-radius:999px;white-space:nowrap}
+  iframe{position:fixed;left:0;right:0;bottom:0;width:100%;border:0;background:#fff}
+</style>
+</head>
+<body>
+<div class="bandeau"><a href="/augmain-carte">← Retour</a><span>Exemple : un bar fictif</span><a class="cta" href="/creer" data-cta="exemple-creer">Créer le mien</a></div>
+<iframe id="f" title="Exemple de site"></iframe>
+<script src="https://augmain.vercel.app/tpl.js"></script>
+<script>
+(function(){
+  var DEMO={name:"Le Petit Zinc",type:"Bar à cocktails",city:"Montpellier",theme:"or",lang:"fr",preview:true,kind:"food",
+    tagline:"Cocktails maison et planches à partager, au cœur de l'Écusson",hero:"https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=900&q=70",rating:4.8,phone:"0467000000",address:"12 rue de l'Université, Montpellier",googleReview:"https://g.page/r/demo/review",
+    hours:["","17h-1h","17h-1h","17h-1h","17h-2h","17h-2h",""],highlights:["Terrasse chauffée","Happy hour 18h-20h","Cocktails maison"],
+    menu:[{cat:"Cocktails",items:[{name:"Mojito",price:"9",desc:"Rhum, menthe fraîche, citron vert",tags:["signature"]},{name:"Espresso Martini",price:"11",desc:"Vodka, café, liqueur de café",tags:["signature"]},{name:"Spritz",price:"8.5"},{name:"Negroni",price:"10"}]},
+      {cat:"Bières pression",items:[{name:"Blonde 25 cl",price:"4"},{name:"IPA locale",price:"6.5"}]},{cat:"À partager",items:[{name:"Planche mixte",price:"18",desc:"Charcuterie et fromages de la région",tags:["signature"]},{name:"Frites maison",price:"5"}]}]};
+  DEMO.brandLevel="small";
+  var f=document.getElementById("f"),b=document.querySelector(".bandeau");
+  function fit(){var h=b.offsetHeight;f.style.top=h+"px";f.style.height="calc(100% - "+h+"px)"}
+  f.onload=function(){try{f.contentDocument.addEventListener("click",function(e){var a=e.target.closest("a[href^='tel:'],a[href*='g.page'],a[href*='maps']");if(a){e.preventDefault();alert("C'est un exemple : sur votre site, ce bouton appelle votre commerce ou ouvre l'itinéraire.")}},true)}catch(e){}};
+  f.srcdoc=window.AugCarte.renderSite(DEMO);fit();addEventListener("resize",fit);
+})();
+</script>
+</body>
+</html>
